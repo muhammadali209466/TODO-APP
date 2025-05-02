@@ -1,77 +1,153 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: honeydew;
+  background-color: rgb(37, 42, 52) !important;
 }
-.TODOh1 {
-  color: crimson;
-  text-align: center;
+.todoH1 {
+  color: rgb(255, 71, 108);
 }
-.container {
-  width: 65%;
-  margin: 60px auto;
+.todoIcon {
+  color: red;
 }
 .inputContainer {
-  margin-top: 23px;
+  width: 80%;
 }
-.inputContainer input {
-  width: 100%;
-  padding: 10px;
-  border: 2px solid blue;
+.todoInput {
+  width: 80%;
+  background-color: rgb(31, 222, 181) !important;
+  margin: 4px;
+  border: solid 2px rgb(150, 213, 24);
+  padding: 5px;
+  outline: none;
+  color: deeppink;
+  font-weight: 700;
+}
+.todoInput:focus {
+  border: solid 2px darkgoldenrod;
+}
+.addBtn {
+  color: darkmagenta !important;
+  font-weight: 700;
+  background-color: darkorange !important;
+  border: solid 1px darkorange !important;
+  border-radius: 6px;
+  padding: 8px;
+  width: 66px;
+  margin: 10px;
+  transition: all ease 0.6s;
+}
+
+.deleteAllBtn {
+  color: darkmagenta !important;
+  font-weight: 700;
+  background-color: darkorange !important;
+  border: solid 1px darkorange !important;
+  border-radius: 6px;
+  padding: 8px;
+  width: 100px;
+  transition: all ease 0.6s;
+  margin-left: 10px;
+}
+
+.addBtn:hover {
+  background-color: deepskyblue !important;
+  color: darkblue !important;
+  border: solid 1px deepskyblue !important ;
+}
+.deleteAllBtn:hover {
+  background-color: deepskyblue !important;
+  color: darkblue !important;
+  border: solid 1px deepskyblue !important ;
+}
+
+label {
+  color: white;
   font-size: 19px;
-  background-color: lightgreen;
-  color: red;
-  outline: none;
-  font-size: 18px;
-  margin-bottom: 15px;
-  border-radius: 7px;
+  font-weight: 600;
+  font-style: italic;
 }
-.inputContainer button {
-  padding: 11px;
-  cursor: pointer;
-  background-color: rgb(80, 80, 195);
-  color: whitesmoke;
-  outline: none;
-  border: solid 1px rgb(80, 80, 195);
-  border-radius: 9px;
+.btnContainer {
+  width: 50%;
+}
+.cardBodyContaier {
+  background-color: ivory !important;
+  border-radius: 12px;
+  width: 454px;
+}
+.cardDescription {
+  color: goldenrod;
   font-weight: 700;
-  font-size: 17px;
+  background-color: cyan !important;
+}
+.cardTitle {
+  color: coral;
+  background-color: chartreuse !important;
+}
+.EditBtn {
+  border-radius: 6px;
+  padding: 5px;
+  width: 60px;
+  color: crimson;
+  font-weight: 600;
+  background-color: rgb(203, 199, 190) !important;
+  border: solid 1px;
+  outline: none;
+  margin-right: 12px;
   transition: all ease 0.6s;
 }
-.inputContainer button:hover {
-  background-color: chartreuse;
-  color: chocolate;
-  border: solid 1px chartreuse;
-}
-.listContainer {
-  margin: 40px;
-  padding: 16px;
-  list-style: none;
-}
-.listContainer button {
-  padding: 11px;
-  cursor: pointer;
-  background-color: rgb(80, 80, 195);
-  color: whitesmoke;
+
+.DeleteBtn {
+  border-radius: 6px;
+  padding: 5px;
+  width: 60px;
+  color: crimson;
+  font-weight: 600;
+  background-color: rgb(203, 199, 190) !important;
+  border: solid 1px;
   outline: none;
-  border: solid 1px rgb(80, 80, 195);
-  border-radius: 9px;
-  font-weight: 700;
-  font-size: 17px;
   transition: all ease 0.6s;
 }
-.listContainer button:hover {
-  background-color: chartreuse;
-  color: chocolate;
-  border: solid 1px chartreuse;
+.EditBtn:hover {
+  color: forestgreen;
+  background-color: lightblue !important ;
+  border: solid 1px lightblue;
 }
-.listContainer li {
-  margin-top: 12px;
-  background-color: aquamarine;
-  padding: 12px;
+
+.DeleteBtn:hover {
+  color: forestgreen;
+  background-color: lightblue !important ;
+  border: solid 1px lightblue;
 }
-.liLine {
-  text-decoration: line-through;
-  color: red;
+
+@media screen and (min-width: 310px) and (max-width: 600px) {
+  label {
+    font-size: 14px;
+  }
+  .inputContainer {
+    width: 70%;
+  }
+  .todoInput {
+    width: 100%;
+    font-size: 10px;
+  }
+  .addBtn {
+    width: 45px;
+    font-size: 11px;
+  }
+  .deleteAllBtn {
+    width: 77px;
+    font-size: 11px;
+    margin-left: 0px;
+  }
+  .btnContainer {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cardBodyContaier {
+    width: 300px;
+  }
+  .cardTitle {
+    font-size: 19px;
+  }
+  .cardDescription {
+    font-size: 12px;
+  }
 }

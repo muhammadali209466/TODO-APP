@@ -1,66 +1,58 @@
-var listParent = document.getElementById("listParent");
-// console.log(listParent)
+var parent = document.getElementById("parent");
+function getTodo() {
+  var inputTitleElement = document.getElementById("inputTitle");
+  // console.log(inputTitleElement)
+  var inputDescriptionElement = document.getElementById("inputDescription");
+  // console.log(inputDescription)
 
-function createNote() {
-  var input = document.getElementById("input");
-  if (!input.value) {
-    alert("input field are required ");
-    return;
-  }
-  var liElement = document.createElement("li");
-  liElement.innerText = input.value;
-  // console.log(liElement)
-  var editBtn = document.createElement("button");
-  editBtn.innerHTML = "Edit";
+  var inputTitle = inputTitleElement.value;
+  var inputDescription = inputDescriptionElement.value;
 
-  editBtn.setAttribute("onclick", "editTODO(this)");
-
-  var deleteBtn = document.createElement("button");
-  deleteBtn.innerHTML = "Delete";
-
-  deleteBtn.setAttribute("onclick", "deleteTODO(this)");
-
-  var completebtn = document.createElement("button");
-  completebtn.innerHTML = "InComplete";
-  completebtn.setAttribute("onclick", "completeTODO(this)");
-
-  editBtn.style.margin = "4px";
-  deleteBtn.style.margin = "4px";
-  completebtn.style.margin = "4px";
-
-  liElement.append(editBtn);
-  liElement.append(deleteBtn);
-  liElement.append(completebtn);
-  // console.log(liElement)
-
-  listParent.appendChild(liElement);
-  input.value = "";
-}
-
-function editTODO(editBtn) {
-  var editValue = prompt(
-    "Enter TODO Value",
-    editBtn.previousSibling.textContent
-  );
-  if (!editValue) {
-    alert("Enter Edit Value");
-
+  if (!inputTitle || !inputDescription) {
+    alert("Input Field are Required");
     return;
   }
 
-  // console.log("editValue", editValue);
-  editBtn.previousSibling.textContent = editValue;
+  var cardTodo = `<div class="card container mt-5 ">
+      <div class="card-body cardBodyContaier p-3">
+        <h5 class="card-title cardTitle">${inputTitle}</h5>
+
+        <p class="card-text cardDescription mt-4 mb-4">
+          ${inputDescription}
+        </p>
+        <button class="EditBtn" onclick="editTodo(this)">Edit</button>
+        <button class="DeleteBtn" onclick="deleteTodo(this)">Delete</button>
+      </div>
+    </div> `;
+
+  // console.log(cardTodo)
+  var parent = document.getElementById("parent");
+  parent.innerHTML += cardTodo;
+
+  inputTitleElement.value = "";
+  inputDescriptionElement.value = "";
 }
-function deleteTODO(deleteBtn) {
-  console.log("deleteTODO()", deleteBtn.parentNode);
-  deleteBtn.parentNode.remove();
+function deleteTodo(deleteBtn) {
+  // console.log(deleteBtn)
+  // console.log(deleteBtn.parentNode.parentNode.parentNode)
+  deleteBtn.parentNode.parentNode.innerHTML = "";
 }
 
-function deletetAll() {
-  listParent.innerHTML = "";
+function editTodo(editBtn) {
+  // console.log("editTodo()")
+
+  var titleElement = editBtn.previousElementSibling.previousElementSibling;
+  var changeTitle = prompt("Change Title Value", titleElement.innerHTML);
+  titleElement.innerHTML = changeTitle;
+  // console.log(titleElement)
+
+  var cardTitle = editBtn.previousElementSibling;
+  var cardDescrip = prompt("Change Description Value", cardTitle.innerHTML);
+  cardTitle.innerHTML = cardDescrip;
+  // console.log(cardTitle)
 }
 
-function completeTODO(btn) {
-  console.log("btn", btn.parentNode);
-  btn.parentNode.className = "liLine";
+function deleteAll() {
+  // console.log("Delete")
+  parent.innerHTML = "";
 }

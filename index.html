@@ -5,22 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TODO APP</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
   <body>
-    <div class="container">
-      <h1 class="TODOh1">TODO APPLICATION</h1>
-      <div class="inputContainer">
-        <input type="text" placeholder="Enter TODO..." id="input" />
-        <button onclick="createNote()">ADD</button>
-        <button onclick=" deletetAll()">Delete All</button>
-      </div> 
-      <ul class="listContainer" id="listParent">
-        <!-- <li>
-          <button>Edit</button>
-          <button>Delete</button>
-        </li> -->
-      </ul>
+    <div
+      class="container mt-5 d-flex justify-content-center animate__animated animate__bounce"
+    >
+      <h1 class="text-center pt-3 fst-italic todoH1">TODO APP</h1>
+      <i class="fa-solid fa-2x fa-book m-4 align-content-center todoIcon"></i>
     </div>
+
+    <div class="inputContainer mx-auto mt-5">
+      <label class="d-block"> TODO Title </label>
+      <input type="text" class="todoInput" id="inputTitle" />
+
+      <label class="d-block"> TODO Description </label>
+      <input type="text" class="todoInput" id="inputDescription" />
+    </div>
+    <div class="mt-4 text-center btnContainer">
+      <button class="addBtn" onclick="getTodo()">ADD</button>
+      <button class="deleteAllBtn" onclick="deleteAll()">DELETE All</button>
+    </div>
+
+    <!-- <div class="card container mt-5 ">
+      <div class="card-body cardBodyContaier p-3">
+        <h5 class="card-title cardTitle">Card title</h5>
+
+        <p class="card-text cardDescription mt-4 mb-4">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+        <button class="EditBtn" onclick="editTodo(this)>Edit</button>
+        <button class="DeleteBtn onclick="deleteTodo(this)"">Delete</button>
+      </div>
+    </div> -->
+
+    <div id="parent"></div>
   </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"
+  ></script>
   <script src="app.js"></script>
 </html>
